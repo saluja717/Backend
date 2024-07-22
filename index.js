@@ -13,10 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 app.use(
-    cors({
-        origin:"https://frontend-lemon-rho-68.vercel.app/",
-        credentials:true,
-    })
+    cors()
 )
 
 app.use((req,res,next)=>{
