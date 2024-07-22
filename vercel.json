@@ -16,7 +16,7 @@
                 },
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "https://frontend-lemon-rho-68.vercel.app/"
+                    "value": "https://frontend-lemon-rho-68.vercel.app"
                 },
                 {
                     "key": "Access-Control-Allow-Methods",
