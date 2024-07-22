@@ -12,6 +12,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
+app.use(
+    cors({
+        origin: "https://frontend-lemon-rho-68.vercel.app/",
+        credentials: true
+    })
+)
+
+
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
@@ -32,13 +40,6 @@ app.use((req, res, next) => {
 
   next();
 });
-
-app.use(
-    cors({
-        origin: "https://frontend-lemon-rho-68.vercel.app/",
-        credentials: true
-    })
-)
 
 
 app.use("/insert", InsertData);
