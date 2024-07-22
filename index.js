@@ -14,7 +14,7 @@ app.use(cookieParser())
 
 app.use(
     cors({
-        origin:"https://frontend-lemon-rho-68.vercel.app,
+        origin:"https://frontend-lemon-rho-68.vercel.app",
         credentials:true,
         allowedHeaders: ['Content-Type', 'Authorization'],
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
