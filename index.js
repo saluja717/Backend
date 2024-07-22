@@ -14,12 +14,18 @@ app.use(cookieParser())
 
 app.use(
     cors({
-        origin:"https://frontend-lemon-rho-68.vercel.app",
+        origin:"https://frontend-lemon-rho-68.vercel.app/",
         credentials:true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-        allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
     })
 )
+
+app.use((req,res,next)=>{
+    res.header('Access-Control-Allow-Origin', 'https://frontend-opal-theta.vercel.app/');
+   // res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+   // res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+})
 
 app.use("/insert", InsertData);
 app.use("/", GetData);
