@@ -62,6 +62,9 @@ const loginHandler = async (req, res) => {
             const { password, ...rest } = user._doc;
             return res.cookie("token", jwtToken, {
                 httpOnly: true,
+                secure:true,
+                sameSite:"none",
+                path:'/',
                 expires: new Date(Date.now() + 24 * 60 * 60 * 1000)
             }).send({ ...rest, jwtToken });
         } else {
