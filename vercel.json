@@ -8,9 +8,7 @@
   ],
   "routes": [
     {
-      "src": { "/(.*)" : {
-         "maxDuration":60
-      }},
+      "src": "/(.*)",
       "dest": "/index.js"
     }
   ]
