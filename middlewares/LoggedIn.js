@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken")
 const LoggedIn = (req, res, next) => {
     try {
         const token = req.cookies.token
+        console.log(token)
         const user = jwt.verify(token, process.env.JWT_SECRET_KEY);
         req.user_token = token
         req.user_name = user.name
