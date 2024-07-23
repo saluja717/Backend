@@ -23,7 +23,8 @@ app.use("/insert", InsertData);
 app.use("/", GetData);
 app.use("/auth", Auth)
 
+dbConnect()
+
 app.listen(4000, () => {
-    dbConnect()
     console.log("Server Started")
 })
