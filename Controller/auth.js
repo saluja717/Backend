@@ -18,7 +18,7 @@ const registerHandler = async (req, res) => {
             subject: 'Email Verification',
             to: req.body.email,
             text: `Hello,\n\nPlease verify your account by clicking the link: 
-            https://backend-ruddy-eta.vercel.app/auth/verify/${userId}/${jwtToken}\n`
+            https://backend-kohl-kappa.vercel.app/auth/verify/${userId}/${jwtToken}\n`
         });
         res.status(200).send({ message: "Verification email sent. Please check your inbox." });
     } catch (err) {
