@@ -24,7 +24,6 @@ app.use("/", GetData);
 app.use("/auth", Auth)
 
 app.listen(4000, () => {
-    //connect
     dbConnect()
     console.log("Server Started")
 })
