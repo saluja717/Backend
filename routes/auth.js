@@ -14,4 +14,8 @@ authRouter.route("/verify/:userId/:token")
 authRouter.route("/login")
     .post(loginHandler);
 
+export const config = {
+  maxDuration: 300,
+};
+
 module.exports = authRouter;
