@@ -60,13 +60,14 @@ const loginHandler = async (req, res) => {
         } else if (cryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY).toString(cryptoJS.enc.Utf8) === req.body.password) {
             const jwtToken = jwt.sign({ "userId": user.userId, "name": user.name, id: user._id }, process.env.JWT_SECRET_KEY);
             const { password, ...rest } = user._doc;
-            return res.cookie("token", jwtToken, {
+            res.cookie("token", jwtToken, {
                 httpOnly: true,
                 secure:true,
                 sameSite:"none",
                 path:'/',
                 expires: new Date(Date.now() + 24 * 60 * 60 * 1000)
             }).send({ ...rest, jwtToken });
+            return;
         } else {
             res.status(401).send({ message: "Invalid password." });
             return;
